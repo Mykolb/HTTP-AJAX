@@ -1,62 +1,56 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import FriendsList from './components/FriendsList/FriendsList';
+import Forms from './components/FriendsList/Forms';
 //styles//
 import './App.css';
-import { Button, Form, FormGroup, Input } from 'reactstrap';
 
-class App extends React.Component {
+
+class App extends Component {
   constructor() {
   super(); 
     this.state = {
-      friends: []
+      friends: [],
     }
   }
+
+  //get request
 
   componentDidMount() {    
     axios.get('http://localhost:5000/friends')
     .then(response => this.setState({ friends: response.data}))
-    .catch(error => console.log('You done messed up!'))
-  }
+    .catch(error => console.log('You done messed up!')
+    )};
+
+
+  //post request
   
+  addFriend = friends => {
+    console.log('in app- post message');
+    // event.preventDefault();
+    axios.post('http://localhost:5000/friends', friends) //base url...address for server...says it wants to send info to end request; server says what data do you have for me to add 'object'
+   .then(response => {this.setState({ friends: response.data})
+   .catch(error => console.log(error))
+    .then(response => {
+      console.log(response);
+      this.setState({
+        friends: response.data.friends
+      })
+    })
+  
+    .catch(error => {
+      console.log(error);
+  });
+})
+  }
 
    render() {
     return (
-      <div className="App">
-       <h1>Header Here</h1>
-       <FriendsList  />
-
-       <Form className='friend-form'>
-       <FormGroup className='name-form'>
-        <Input
-        type='text'
-        placeholder='Name'
-        name='name'
-        value=''
-        onChange=''
-        />
-        </FormGroup>
-
-        <FormGroup className='age-form'>
-        <Input
-        type='text'
-        placeholder='Age'
-        name='Age'
-        value=''
-        onChange=''
-        />
-        </FormGroup>
-
-        <FormGroup className='email-form'>
-        <Input
-        type='text'
-        placeholder='Email'
-        name='email'
-        value=''
-        onChange=''
-        />
-        </FormGroup>
-       </Form>
+      <div className='container'>
+       <h1>Burn Book</h1>
+       <FriendsList  friends={this.state.friends}/>
+        <Forms addFriend={this.addFriend} />
+       
       </div>
     );
   }
