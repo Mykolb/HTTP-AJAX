@@ -5,6 +5,15 @@
 }
 
 .friend-card {
+  margin: 1% 3% 1% 3%;
+  width: 300px;
+  height: 250px;
+}
 
-  margin: 1%;
+.icons {
+  margin-right: 1%;
+}
+
+h1 {
+  text-align: center;
 }

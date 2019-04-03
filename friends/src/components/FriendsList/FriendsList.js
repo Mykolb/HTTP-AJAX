@@ -13,13 +13,13 @@ const FriendsList = props => {
                 <div className='friend-card'>
                 <Card body inverse color='info'>
                     <CardTitle>
-                    <Icon.User className='userIcon' />
+                    <Icon.User className='icons' />
                     {friends.name}</CardTitle>
                     <CardText>
-                    <Icon.Info className='infoIcon' />
+                    <Icon.Info className='icons' />
                     {friends.age}</CardText>
                     <CardText> 
-                    <Icon.Mail className='mailIcon' />
+                    <Icon.Mail className='icons' />
                     {friends.email}</CardText>
                     <CardText>ID: {friends.id}</CardText>
                     </Card>

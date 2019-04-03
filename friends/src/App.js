@@ -3,6 +3,7 @@ import axios from 'axios';
 import FriendsList from './components/FriendsList/FriendsList';
 import Forms from './components/FriendsList/Forms';
 //styles//
+
 import './App.css';
 
 
@@ -47,7 +48,7 @@ class App extends Component {
    render() {
     return (
       <div className='container'>
-       <h1>Burn Book</h1>
+       <h1>Contacts</h1>
        <FriendsList  friends={this.state.friends}/>
         <Forms addFriend={this.addFriend} />
        
