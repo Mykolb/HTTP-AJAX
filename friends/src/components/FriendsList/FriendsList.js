@@ -21,7 +21,7 @@ const FriendsList = props => {
                     <CardText> 
                     <Icon.Mail className='icons' />
                     {friends.email}</CardText>
-                    <CardText>ID: {friends.id}</CardText>
+                    <CardText><strong>ID:</strong> {friends.id}</CardText>
                     </Card>
                 </div>
             )

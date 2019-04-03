@@ -9,7 +9,12 @@
   width: 300px;
   height: 185px;
   box-shadow: 10px 10px 10px gray;
-}
+  /* border-radius: 50% 20% / 10% 40%; */
+  }
+
+/* .friend-card:hover {
+
+} */
 
 .icons {
   margin-right: 1%;
@@ -19,3 +24,12 @@ h1 {
   text-align: center;
 }
 
+.form {
+  display: flex;
+  margin: 5% 3% 0% 3%;
+  justify-content: center;
+}
+
+Button {
+  height: 39px;
+}

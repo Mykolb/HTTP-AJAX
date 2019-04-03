@@ -41,7 +41,7 @@ handleSubmit = event => {
     render() { 
         return ( 
             <div className='container'>
-            <Form onSubmit={this.handleSubmit}>
+            <Form className='form' onSubmit={this.handleSubmit}>
             <FormGroup className='name-form'>
              <Input
              type='text'
@@ -51,7 +51,7 @@ handleSubmit = event => {
              onChange={this.changeHandler}
              />
              </FormGroup>
-
+        
             <FormGroup className='age-form'>
             <Input
             type='number'
@@ -71,7 +71,7 @@ handleSubmit = event => {
             onChange={this.changeHandler}
             />
             </FormGroup>
-            <Button onClick={this.addFriend}>Save</Button>
+            <Button outline color='info' size='sm' onClick={this.addFriend}>Save</Button>
             </Form>
             </div>
          );

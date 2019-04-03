@@ -3,7 +3,6 @@ import axios from 'axios';
 import FriendsList from './components/FriendsList/FriendsList';
 import Forms from './components/FriendsList/Forms';
 //styles//
-
 import './App.css';
 
 
