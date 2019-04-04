@@ -38,6 +38,9 @@ handleSubmit = event => {
 
 
 
+
+
+
     render() { 
         return ( 
             <div className='container'>
@@ -71,7 +74,7 @@ handleSubmit = event => {
             onChange={this.changeHandler}
             />
             </FormGroup>
-            <Button outline color='info' size='sm' onClick={this.addFriend}>Save</Button>
+            <Button outline color='info' size='sm'>Save</Button>
             </Form>
             </div>
          );
