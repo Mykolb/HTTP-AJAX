@@ -19,11 +19,8 @@ class Forms extends React.Component {
 
   //changeHandler // gets moved to form component
   changeHandler = event => {
-    this.setState({
-        friend: {
-        [event.target.name]: event.target.value
-    }   
-})
+    this.setState({ [event.target.name]: event.target.value});
+  
   }
 
 handleSubmit = event => {
