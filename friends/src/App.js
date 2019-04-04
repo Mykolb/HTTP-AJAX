@@ -28,7 +28,8 @@ class App extends Component {
   addFriend = friends => {
     console.log('in app- post message');
     axios.post('http://localhost:5000/friends', friends) //base url...address for server...says it wants to send info to end request; server says what data do you have for me to add 'object'
-   .then(response => this.setState({ friends: response.data}))
+   .then(response => 
+    this.setState({ friends: response.data}))
    .catch(error => console.log(error)
    )};
 
@@ -40,9 +41,8 @@ class App extends Component {
       <div className='container'>
        <h1>Contacts</h1>
        <FriendsList  friends={this.state.friends}/>
-        <Forms 
-        addFriend={this.addFriend}
-        />
+        <Forms  addFriend={this.addFriend} />
+       
        
       </div>
     );

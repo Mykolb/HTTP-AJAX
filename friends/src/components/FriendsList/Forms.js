@@ -11,29 +11,41 @@ class Forms extends React.Component {
     constructor(props) {
         super(props);
         this.state = {  
-            newName: '',
-            newAge: '',
-            newEmail: ''
+            friend: {
+            name: '',
+            age: '',
+            email: ''   
+            }
+         
         }
     }
 
   //changeHandler // gets moved to form component
   changeHandler = event => {
-    this.setState({ [event.target.name]: event.target.value});
+      event.persist();
+      let value = event.target.value;
+
+    this.setState(prevState => ({
+        friend: {
+            ...prevState.friend,
+        [event.target.name]:value
+    }
+    }))
   
   }
 
 handleSubmit = event => {
     event.preventDefault();
-    let newFriend = {
-        name: this.state.name,
-        age: this.state.age,
-        email: this.state.email
-    }
-    this.props.addFriend(newFriend);
+    this.props.addFriend(this.state.friend);
+
+    this.setState({
+        friend: {
+            name: '',
+            age: '',
+            email: ''   
+            }
+    })
 }
-
-
 
 
 
@@ -47,7 +59,7 @@ handleSubmit = event => {
              type='text'
              placeholder='Name'
              name='name'
-             value={this.state.name}
+             value={this.state.friend.name}
              onChange={this.changeHandler}
              />
              </FormGroup>
@@ -57,7 +69,7 @@ handleSubmit = event => {
             type='number'
             placeholder='Age'
             name='Age'
-            value={this.state.age}
+            value={this.state.friend.age}
             onChange={this.changeHandler}
             />
             </FormGroup>
@@ -67,7 +79,7 @@ handleSubmit = event => {
             type='string'
             placeholder='Email'
             name='email'
-            value={this.state.email}
+            value={this.state.friend.email}
             onChange={this.changeHandler}
             />
             </FormGroup>
@@ -78,3 +90,4 @@ handleSubmit = event => {
     }
 }
 export default Forms;
+
