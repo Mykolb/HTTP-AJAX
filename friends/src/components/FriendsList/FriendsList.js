@@ -10,7 +10,7 @@ const FriendsList = props => {
         {props.friends.map(friends => 
         {
             return(
-                <div className='friend-card' key={friends.card}>
+                <div className='friend-card' key={friends.id}>
                 <Card body inverse color='info'>
                     <CardTitle>
                     <Icon.User className='icons' />
