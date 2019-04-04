@@ -22,6 +22,7 @@ class Forms extends React.Component {
 
   //changeHandler // gets moved to form component
   changeHandler = event => {
+      console.log('change handler working');
       event.persist();
       let value = event.target.value;
 
@@ -68,7 +69,7 @@ handleSubmit = event => {
             <Input
             type='number'
             placeholder='Age'
-            name='Age'
+            name='age'
             value={this.state.friend.age}
             onChange={this.changeHandler}
             />
