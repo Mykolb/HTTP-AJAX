@@ -1,3 +1,10 @@
+const envReader = require('dotenv');
+envReader.config(); //reads .env & merges it into process.env
+//require('dotenv).config(); same thing as above 
+const server = require('./api/server.js');
+
+
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -80,6 +87,10 @@ app.delete('/friends/:id', (req, res) => {
 	res.status(200).json(friends);
 });
 
-app.listen(5000, () => {
+
+
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
   console.log('server listening on port 5000');
 });
