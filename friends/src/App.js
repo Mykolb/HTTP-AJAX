@@ -14,6 +14,9 @@ class App extends Component {
     }
   }
 
+ 
+
+
   //get request
 
   componentDidMount() {    
@@ -34,6 +37,15 @@ class App extends Component {
    )};
 
 
+//delete request 
+  deleteFriend = id => {
+    console.log('delete is working')
+  axios.delete(`http://localhost:5000/friends/${id}`)
+  .then(response =>
+    this.setState({ friends: response.data})
+    .catch(error => console.log(error))
+    )};
+
 
 
    render() {
@@ -41,7 +53,7 @@ class App extends Component {
       <div className='container'>
        <h1>Contacts</h1>
        <FriendsList  friends={this.state.friends}/>
-        <Forms  addFriend={this.addFriend} />
+        <Forms  addFriend={this.addFriend} deleteFriend={this.deleteFriend} />
        
        
       </div>

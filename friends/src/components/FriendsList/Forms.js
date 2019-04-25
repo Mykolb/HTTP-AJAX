@@ -1,9 +1,6 @@
 import React from 'react';
-
-
 //styles
 import {Button, Form, FormGroup, Input, } from 'reactstrap';
-
 
 
 
@@ -18,6 +15,13 @@ class Forms extends React.Component {
             }
          
         }
+
+     const deleteFriend = event => {
+            event.preventDefault()
+            this.props.deleteFriend(this.state.friend);
+        }
+
+
     }
 
   //changeHandler // gets moved to form component
