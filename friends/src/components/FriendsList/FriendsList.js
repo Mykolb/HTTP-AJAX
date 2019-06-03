@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardText } from 'reactstrap';
+import { Card, CardTitle, CardText, Button } from 'reactstrap';
 import * as Icon from 'react-feather';
 
 
@@ -7,10 +7,10 @@ import * as Icon from 'react-feather';
 const FriendsList = props => {
     return( 
         <div className='list-container'>
-        {props.friends.map(friends => 
+        {props.friend.map(friends => 
         {
             return(
-                <div className='friend-card' key={friends.card}>
+                <div className='friend-card' key={friends.id}>
                 <Card body inverse color='info'>
                     <CardTitle>
                     <Icon.User className='icons' />
@@ -22,6 +22,7 @@ const FriendsList = props => {
                     <Icon.Mail className='icons' />
                     {friends.email}</CardText>
                     <CardText><strong>ID:</strong> {friends.id}</CardText>
+                    <Button className='delete-btn' outline color='warning' size='sm'>Delete</Button>
                     </Card>
                 </div>
             )
